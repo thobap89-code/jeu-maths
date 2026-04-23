@@ -15,7 +15,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🚀 Défi Maths Rigolo !")
+st.title("🚀 Défi Maths Rigolo pour Mattéo !")
 
 # Initialisation du score et de l'exercice dans la "session state" (mémoire de la page)
 if 'score' not in st.session_state:
@@ -38,12 +38,12 @@ st.info(f"### {st.session_state.nb1} {st.session_state.operation} {st.session_st
 # Zone de réponse
 reponse = st.number_input("Tapes ta réponse ici :", step=1, value=0, key="input_reponse")
 
-if st.button("Vérifier !"):
+if st.button("Vérifier la réponse!"):
     resultat_attendu = st.session_state.nb1 + st.session_state.nb2 if st.session_state.operation == '+' else st.session_state.nb1 - st.session_state.nb2
     
     if reponse == resultat_attendu:
         st.balloons() # Pluie de ballons !
-        st.success("BRAVO ! Tu es un champion ! 🎉")
+        st.success("BRAVO Mattéo! Tu es un champion comme Marco ! 🎉")
         st.session_state.score += 1
         time.sleep(2) # Petite pause pour voir le succès
         
